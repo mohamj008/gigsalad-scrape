@@ -14,13 +14,9 @@ base_url = 'https://www.gigsalad.com'
 
 clean_links = set()
 
-# Send a GET request to the URL and retrieve the page content
+# Send a GET request to the URL and retrieve the page content 
 response = requests.get(url)
-
-# Parse the HTML content using BeautifulSoup
 soup = BeautifulSoup(response.text, 'html.parser')
-
-# Find all anchor tags (links) in the parsed HTML
 services_links = soup.find_all('a', href=True)
 
 # Extract and clean the links
